@@ -5,13 +5,13 @@ A GitHub Action to run [dbt](https://www.getdbt.com) commands in a Docker contai
 ### dbt version
 The current version of dbt is **1.7.3**. Please note that from dbt v1.0.0. you may have to change your dbt project structure compared to v0.x.x. See the [migration](https://docs.getdbt.com/docs/guides/migration-guide/upgrading-to-1-0-0) docs.
 
-dbt updates their [docker images](https://hub.docker.com/r/fishtownanalytics/dbt/tags?page=1&ordering=last_updated) on a frequent basis and the main branch of this Github Action should be close to the last stable tag. If you need to use an earlier version of dbt, you can call this action with a specific [release](https://github.com/mwhitaker/dbt-action/releases), eg `mwhitaker/dbt-action@v0.21.0` or `mwhitaker/dbt-action@v1.5.0`.
+dbt updates their [docker images](https://hub.docker.com/r/fishtownanalytics/dbt/tags?page=1&ordering=last_updated) on a frequent basis and the main branch of this Github Action should be close to the last stable tag. If you need to use an earlier version of dbt, you can call this action with a specific [release](https://github.com/nabinhyanmikha/dbt-action/releases), eg `nabinhyanmikha/dbt-action@v0.21.0` or `nabinhyanmikha/dbt-action@v1.5.0`.
 
 ## Usage
 
 ```yml
     - name: dbt-action
-      uses: mwhitaker/dbt-action@master
+      uses: nabinhyanmikha/dbt-action@master
       with:
         dbt_command: "dbt run --profiles-dir ."
       env:
@@ -24,7 +24,7 @@ The result of the dbt command is either `failed` or `passed` and is saved into t
 ```yml
     - name: dbt-action
       id: dbt-run
-      uses: mwhitaker/dbt-action@master
+      uses: nabinhyanmikha/dbt-action@master
       with:
         dbt_command: "dbt run --profiles-dir ."
       env:
@@ -42,7 +42,7 @@ This action assumes that your dbt project is in the top-level directory of your 
 
 ```yml
     - name: dbt-action
-      uses: mwhitaker/dbt-action@master
+      uses: nabinhyanmikha/dbt-action@master
       with:
         dbt_command: "dbt run --profiles-dir ."
         dbt_project_folder: "dbt_project"
@@ -96,7 +96,7 @@ my_dataset:
 Create a secret for `DBT_USER` and `DBT_PASSWORD` and reference them in your workflow.
 ```yml
     - name: dbt-action
-      uses: mwhitaker/dbt-action@master
+      uses: nabinhyanmikha/dbt-action@master
       with:
         dbt_command: "dbt run --profiles-dir ."
       env:
@@ -123,7 +123,7 @@ default:
 Create a secret for `DBT_TOKEN` and reference it in your workflow.
 ```yml
     - name: dbt-action
-      uses: mwhitaker/dbt-action@master
+      uses: nabinhyanmikha/dbt-action@master
       with:
         dbt_command: "dbt run --profiles-dir ."
         http_path: "sql/protocol/"
@@ -131,14 +131,14 @@ Create a secret for `DBT_TOKEN` and reference it in your workflow.
         DBT_TOKEN: ${{ secrets.DBT_TOKEN }}
 ```
 
-If you cannot connect to another database, please submit an [issue](https://github.com/mwhitaker/dbt-action/issues) and we'll figure it out.
+If you cannot connect to another database, please submit an [issue](https://github.com/nabinhyanmikha/dbt-action/issues) and we'll figure it out.
 
 ## Suggested workflow and other tips
 
-Here is a [sample workflow](https://github.com/mwhitaker/dbt-action-sample) that sends dbt console logs by email.
+Here is a [sample workflow](https://github.com/nabinhyanmikha/dbt-action-sample) that sends dbt console logs by email.
 
 ## Bugs and feature requests
-Please submit via [Github issues](https://github.com/mwhitaker/dbt-action/issues).
+Please submit via [Github issues](https://github.com/nabinhyanmikha/dbt-action/issues).
 ## License
 
 [MIT](LICENSE)
