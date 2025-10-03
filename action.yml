@@ -1,6 +1,6 @@
 name: "dbt action"
 description: "Run and schedule dbt commands directly in your Github repo"
-author: "Michael Whitaker"
+author: "Nabin Hyanmikha"
 
 inputs:
   dbt_command:
