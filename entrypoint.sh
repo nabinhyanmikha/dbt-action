@@ -6,6 +6,7 @@ echo "dbt project folder set as: \"${INPUT_DBT_PROJECT_FOLDER}\""
 cd ${INPUT_DBT_PROJECT_FOLDER}
 
 export PROFILES_FILE="${DBT_PROFILES_DIR:-.}/profiles.yml"
+echo "dbt_profile=${PROFILES_FILES}"
 if [ -e "${PROFILES_FILE}" ]  # check if file exist
 then
   if [ -n "${DBT_BIGQUERY_TOKEN}" ]
